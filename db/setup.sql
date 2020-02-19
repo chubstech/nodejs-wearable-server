@@ -1,0 +1,18 @@
+DROP DATABASE IF EXISTS NOISABLE;
+CREATE DATABASE IF NOT EXISTS NOISEABLE;
+
+USE NOISEABLE
+
+CREATE TABLE User (
+  user_id VARCHAR(8) NOT NULL UNIQUE,
+  PRIMARY KEY ( user_id )
+);
+
+CREATE TABLE NoiseObservation (
+  time_obs int(11) NOT NULL,
+  user_id VARCHAR(8) NOT NULL,
+  db_reading int NOT NULL,
+  FOREIGN KEY ( user_id )
+    REFERENCES User ( user_id )
+    ON DELETE CASCADE
+);
