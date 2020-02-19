@@ -22,7 +22,7 @@ const logins = {
     "password": process.env.MYSQL_PW,
     "multipleStatements": true,
     "port": 3306,
-    "database": "4YOU"
+    "database": "NOISABLE"
   }),
   "production": () => ({
     ...parse(process.env["JAWSDB_URL"]),
