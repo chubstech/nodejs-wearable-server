@@ -54,7 +54,7 @@ router.post('/', function(req, res) {
         console.error(e);
       }
     }
-    res.end();
+    res.json({ msg: "success" });
   })();
 })
 
