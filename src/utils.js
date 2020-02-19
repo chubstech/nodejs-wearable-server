@@ -15,12 +15,7 @@ const stringGenerator = (base, len) => {
     .join('');
 }
 
-const existsHelper = (arr) => {
-  return arr[0][Object.keys(arr[0])[0]] === 1;
-}
-
 module.exports = {
   throwError,
-  ranstr: (len) => stringGenerator(base, len),
-  existsHelper
+  ranstr: (len) => stringGenerator(base, len)
 }

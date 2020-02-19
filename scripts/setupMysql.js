@@ -7,9 +7,7 @@ const {
 } = require('../src/db');
 
 const sql = fs.readFileSync(path.join(__dirname, '../src/db/nodejs_sql_api/setup.sql'), 'utf-8')
-              .split("\n")
-              .filter(e => e !== "")
-              .join("");
+              .replace(/\n/g, " ");
 
 async function setup() {
   const out = await connectionWrapper((conn) => query(conn, sql));
