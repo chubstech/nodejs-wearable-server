@@ -1,2 +1,5 @@
 const path = require('path');
-module.exports = { sqlManager: require(path.join(__dirname, './proxy_ini')) }
+module.exports = {
+  ...require(path.join(__dirname, './connection_wrapper')),
+  ...require(path.join(__dirname, './querier'))
+};
