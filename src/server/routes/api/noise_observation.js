@@ -58,22 +58,23 @@ router.post('/', function(req, res) {
   })();
 })
 
-// router.get('/', function(req, res) {
-//   const { user_id } = req.query;
-//   if(!user_id) {
-//     res.status(400);
-//     res.json({ error: "Must send id" });
-//     return;
-//   }
+router.get('/user/:id?', function(req, res) {
+  // This get endpoint retrieves all noise level data points by user_id
+  const { user_id } = req.route;
+  if(!user_id) {
+    res.status(400);
+    res.json({ error: "Must send id" });
+    return;
+  }
 
-//   (async function() {
-//     const doc = await querier.noise_observation.get.user_id({
-//       user_id
-//     });
-//     const out = await connectionWrapper(doc);
-//     res.status(200);
-//     res.json(out);
-//   })();
-// });
+  (async function() {
+    const doc = await querier.noise_observation.get.user_id({
+      user_id
+    });
+    const out = await connectionWrapper(doc);
+    res.status(200);
+    res.json(out);
+  })();
+});
 
 module.exports = router;
