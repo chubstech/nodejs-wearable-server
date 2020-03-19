@@ -1,5 +1,7 @@
 # nodejs-wearable-server
-Nodejs wearable server
+Nodejs wearable server code
+
+Used to create a server in which secure data concerning noise is recorded and then trasmitted into a database
 
 # Set up on Mac
 ## Using Homebrew
