@@ -6,12 +6,14 @@ const connect = conn => {
   return new Promise((res, rej) => conn.connect((err) => err ? rej(err) : res()));
 }
 
+//gets avaliable hosts and ports
 async function connection(opts) {
   const strPort = `${opts.port}`;
   const host = `${opts.host}`;
   if(!host) throw new Error("No hast provided in options");
 
   let promise;
+  //creates a mysql connection
   let conn = mysql.createConnection(opts);
   if(strPort) connections[host] || (connections[host] = {});
   conn = mysql.createConnection(opts);
@@ -24,6 +26,8 @@ async function connection(opts) {
     }
     throw new Error(error);
   }
+  
+  //'promise' fullfiled and no longer proxy value and then returns connection
   promise = new Promise(res => res(conn));
   if(strPort) {
     connections[host][strPort] = promise;
