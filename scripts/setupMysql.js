@@ -1,14 +1,17 @@
 const fs = require('fs');
-const path = require('path');
+//returns user path
+const path = require('path'); 
 
 const {
   query,
   connectionWrapper
 } = require('../src/db');
 
+//reads setup file and returns data
 const sql = fs.readFileSync(path.join(__dirname, '../src/db/nodejs_sql_api/setup.sql'), 'utf-8')
               .replace(/\n/g, " ");
 
+//sets up connection to database and returns connection
 async function setup() {
   const out = await connectionWrapper((conn) => query(conn, sql));
   await connectionWrapper((conn) => conn.end());
