@@ -60,7 +60,8 @@ router.post('/', function(req, res) {
 
 router.get('/user/:id?', function(req, res) {
   // This get endpoint retrieves all noise level data points by user_id
-  const { id: user_id } = req.query;
+  const { id } = req.query;
+  const user_id = id;
   if(!user_id) {
     res.status(400);
     res.json({ error: "Must send id" });
