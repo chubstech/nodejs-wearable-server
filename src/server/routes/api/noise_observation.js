@@ -67,10 +67,10 @@ router.get('/user/:id?', function(req, res) {
     res.json({ error: "Must send id" });
     return;
   }
-    console.log(querier.noise_observation)
-    console.log(querier.noise_observation.get)
+    console.log(querier.noiseObservation)
+    console.log(querier.noiseObservation.get)
   (async function() {
-    const doc = await querier.noise_observation.user_id({
+    const doc = await querier.noiseObservation.get.user_id({
       user_id
     });
     const out = await connectionWrapper(doc);
