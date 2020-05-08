@@ -24,6 +24,8 @@ function recBuilder(recObj) {
       const ownKeys = params.length === 1 ? JSON.stringify([]) : JSON.stringify(params);
       return function (obj) {
         const objKeys = JSON.stringify(Object.keys(obj));
+        console.log(objKeys);
+        console.log(ownKeys);
         if (ownKeys !== objKeys) throw new Error("Keys do not match");
         return format(recObj.q)(obj);
       }
