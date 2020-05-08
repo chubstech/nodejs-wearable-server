@@ -13,6 +13,8 @@ async function createUser(user_id) {
     }
 }
 
+const users = {};
+
 router.post('/', function(req, res) {
   const { user_id, data } = req.body;
   if (!(user_id && data)) {
@@ -22,10 +24,13 @@ router.post('/', function(req, res) {
   }
 
   (async function () {
-    try {
-      await createUser(user_id);
-    } catch(e) {
-      console.error(e);
+    if(!users[user_id]) {
+        try {
+          await createUser(user_id);
+          users[user_id] = true;
+        } catch(e) {
+        console.error(e);
+        }
     }
 
     if(!Array.isArray(data)) {
