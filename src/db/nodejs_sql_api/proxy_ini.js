@@ -21,7 +21,7 @@ function recBuilder(recObj) {
   if (typeof recObj === "object") {
     if ('q' in recObj) {
       const params = recObj.params.split(',');
-      const ownKeys = JSON.stringify(params);
+      const ownKeys = params.length === 1 ? [] : JSON.stringify(params);
       return function (obj) {
         console.log(obj);
         const objKeys = JSON.stringify(Object.keys(obj));
