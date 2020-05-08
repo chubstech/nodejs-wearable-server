@@ -2,6 +2,8 @@ const throwError = (text) => {
   throw new Error(text);
 }
 
+//
+
 const allCapsAlpha = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 const allLowerAlpha = [..."abcdefghijklmnopqrstuvwxyz"];
 // const allUniqueChars = [..."~!@#$%^&*()_+-=[]\{}|:,./<>?"];
