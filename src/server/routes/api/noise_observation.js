@@ -24,18 +24,12 @@ router.post('/', function(req, res) {
   }
 
   (async function () {
-      console.log('#$$$');
-      console.log(users[user_id]);
-      console.log('#$$$');
-      
-    if(users[user_id] === undefined) {
         try {
           await createUser(user_id);
           users[user_id] = true;
         } catch(e) {
           console.error(e);
         }
-    }
 
     if(!Array.isArray(data)) {
       res.status(500);
