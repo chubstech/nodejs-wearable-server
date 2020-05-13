@@ -24,6 +24,7 @@ router.post('/', function(req, res) {
   }
 
   (async function () {
+      console.log(users[user_id]);
     if(users[user_id] === undefined) {
         try {
           await createUser(user_id);
