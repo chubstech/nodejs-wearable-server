@@ -24,9 +24,9 @@ router.post('/', function(req, res) {
   }
 
   (async function () {
-      console.log('#$$$");
+      console.log('#$$$');
       console.log(users[user_id]);
-      console.log('#$$$");
+      console.log('#$$$');
       
     if(users[user_id] === undefined) {
         try {
