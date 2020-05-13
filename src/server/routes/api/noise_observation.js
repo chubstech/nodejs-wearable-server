@@ -24,14 +24,14 @@ router.post('/', function(req, res) {
   }
 
   (async function () {
-    if(!users[user_id]) {
+    //if(!users[user_id]) {
         try {
           await createUser(user_id);
           users[user_id] = true;
         } catch(e) {
         console.error(e);
         }
-    }
+    //}
 
     if(!Array.isArray(data)) {
       res.status(500);
