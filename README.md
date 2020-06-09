@@ -3,15 +3,20 @@ Nodejs wearable server code
 
 Used to create a server in which secure data concerning noise is recorded and then trasmitted into a database
 
-# Set up on Mac
-## Using Homebrew
-1. `brew install node`
-2. use `node -v` and `npm -v` to check that it has been installed and mapped correctly
-3. `npm install express`
-4. `npm install body-parser`
+# Build the Host Website
 
-# Start server
+npm run build
+
+https://github.com/chubstech/host-website
+
+Move build files into https://github.com/chubstech/nodejs-wearable-server/tree/master/src/server/build
 
 # SQL Schema
 
 https://github.com/chubstech/nodejs-wearable-server/blob/master/src/db/nodejs_sql_api/setup.sql
+
+# Heroku Setup
+
+Add jawsdb extension, environment variables should automatically be set
+
+Sign into heroku and connect to the master branch and deploy master
