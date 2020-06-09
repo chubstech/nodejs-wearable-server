@@ -11,3 +11,7 @@ Used to create a server in which secure data concerning noise is recorded and th
 4. `npm install body-parser`
 
 # Start server
+
+# SQL Schema
+
+https://github.com/chubstech/nodejs-wearable-server/blob/master/src/db/nodejs_sql_api/setup.sql
